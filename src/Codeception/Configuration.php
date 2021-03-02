@@ -594,6 +594,15 @@ class Configuration
         return self::$dir . DIRECTORY_SEPARATOR;
     }
 
+    /**
+     * Handles properly locating our code coverage path higher up the chain to match the older yii2 advanced app layout
+     *
+     * @return string
+     */
+    public static function yii2AppDir()
+    {
+        return dirname(self::$dir, 3) . DIRECTORY_SEPARATOR;
+    }
 
     /**
      * Returns path to tests directory
